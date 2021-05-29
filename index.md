@@ -81,13 +81,19 @@ Após definir o namespace foi definido algumas características. Primeiro a prop
 
  ![Post email@email.com](/img/resultado_post1.png)
 
+
+
  ![Post email2@email.com](/img/resultado_post2.png)
+
 
    Realizando o GET
 
  ![Get email@email.com](/img/resultado_get1.png)
 
+
+
  ![Get email2@email.com](/img/resultado_get2.png)
+
 
 # Considerações Finais
 
