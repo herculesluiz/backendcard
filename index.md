@@ -21,7 +21,7 @@ Feito estes passos o ambiente de desenvolvimento foi criado.
 
  ![Model](/img/model.png)  
 
-   * Observação: Poderia ser feito sem o atributo Id, porem resolvi deixar um indentificador único para cada registro.
+    * Observação: Poderia ser feito sem o atributo Id, porem resolvi deixar um indentificador único para cada registro.
 
  - Agora vamos criar o arquivo “CardController.cs” na pasta Controllers, nele estarão as regras de negócio da api.
 Após definir o namespace foi definido algumas caracteristicas. Primeiro a propriedade ApiController para trabalhar com http requests e a rota para esse controller. A classe herdamos de ControllerBase. Dentro da rota definida como “card” vamos criar 2 http requests, um get para receber os dados do cartão criado e um post para criar os dados do cartão.
@@ -44,7 +44,7 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
 
  - Em Read receberemos o email por parametro através do endpoint definido em Startup.cs. Se o email estiver vinculado a algum cartão criado, ele retornará  uma lista de objetos Card com os cartões vinculados ao email passado no parametro.
 
- ![Creat / Read](/img/cardrepository2.png)
+ ![Create / Read](/img/cardrepository2.png)
 
 # Configurando arquivo Startup.cs
 
@@ -55,6 +55,19 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
  - Adicionaremos também as configurações de endpoint definindo que Controller que irá mapear os endponits.
 
  ![Startup.cs](/img/startup.png)
+
+# GET e POST
+
+ - Voltando ao arquivo CardControler, vamos acabar de implementar o GET e POST da aplicação.
+
+ - A rota GET acionará um IActionResult Read que usará o cardrepository que criamos. Ele passará email por parametro para retornar os cartões pertencentes ao email informado. Será feito uma verificação se existe algum cartão vinculado ao email. Encontrando um ou mais cartões vinculados ao email, retornará um json a lista de cartões encontrado.
+
+ - A rota POST acionará um IActionResult Create tambem utilizando o cardrepository e o model. Será chamado o método Create do cardrepository que irá gerar o novo cartão. Será realizada algumas validações para garantir que só gere o cartão se no json enviado exista um atributo email preenchido. Ele retornará os dados inserido no banco de dados.
+
+ ![GET / POST](/img/getpost.png)
+
+ 
+
 
 
 
