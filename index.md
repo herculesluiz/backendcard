@@ -15,6 +15,7 @@ Feito estes passos o ambiente de desenvolvimento foi criado.
 
  ![Ambiente criado](/img/ambientedev.png)
 
+
 # Criando as classes principais
 
  - Seguindo a arquitetura MVC vamos criar o Model e o Controller. Crie 2 novas pastas no projeto, uma com nome de “Models” e  outra “Controllers”. Usando o MVC vamos separar as classes por suas funcionalidades. Na pasta Models crie um arquivo que conterá a classe de dados da api. No meu caso dei o nome de “Card.cs”, dentro do arquivo defina o namespace e crie a classe dos dados referente aos cartões que serão gerados. Veja na imagem como fiz.
@@ -27,6 +28,7 @@ Feito estes passos o ambiente de desenvolvimento foi criado.
 Após definir o namespace foi definido algumas caracteristicas. Primeiro a propriedade ApiController para trabalhar com http requests e a rota para esse controller. A classe herdamos de ControllerBase. Dentro da rota definida como “card” vamos criar 2 http requests, um get para receber os dados do cartão criado e um post para criar os dados do cartão.
 
  ![Controller](/img/cardcontroller.png)
+
 
 # Criando um repositório e o DbContext
  - Por hora deixaremos as classes de model e controller e vamos criar uma pasta “Repository” onde usaremos para criar um DataContext que herda DbContext do Entity Framework, que será responsável por carregar nosso banco de dados através do DataContextOptions que será definido mais adiante no arquivo Startup.cs e o DbSet que pegará nosso objeto Card e persistir no banco por encapsulamento do Entity Framework. Usaremos também um repositório de regras de negocios chamado CardRepository para melhorar a organização e independência do código.
@@ -46,6 +48,7 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
 
  ![Create / Read](/img/cardrepository2.png)
 
+
 # Configurando arquivo Startup.cs
 
  - Abra o arquivo Startup.cs para configurar os serviços e endponints da api. 
@@ -55,6 +58,7 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
  - Adicionaremos também as configurações de endpoint definindo que Controller que irá mapear os endponits.
 
  ![Startup.cs](/img/startup.png)
+
 
 # GET e POST
 
@@ -66,8 +70,10 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
 
  ![GET / POST](/img/getpost.png)
 
+
 # Considerações Finais
 
+ - Os endpoints foram testados utilizando o aplicativo Postman.
  - Neste projeto não foi criado a validação do número do cartão de crédito utilizando o algoritmo de Luhn.
  - Este projeto foi realizado para fins de estudo sobre o uso de .Net Core e Entity Framework e não gera números de cartões de crédito reais. São números totalmente aleatórios e a possibilidade de gerar um número de cartão de crédito real é quase inexistente.
 
