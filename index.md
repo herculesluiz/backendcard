@@ -66,6 +66,11 @@ Após definir o namespace foi definido algumas caracteristicas. Primeiro a propr
 
  ![GET / POST](/img/getpost.png)
 
+# Considerações Finais
+
+ - Neste projeto não foi criado a validação do número do cartão de crédito utilizando o algoritmo de Luhn.
+ - Este projeto foi realizado para fins de estudo sobre o uso de .Net Core e Entity Framework e não gera números de cartões de crédito reais. São números totalmente aleatórios e a possibilidade de gerar um número de cartão de crédito real é quase inexistente.
+
  
 
 
